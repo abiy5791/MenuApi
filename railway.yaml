@@ -1,7 +1,0 @@
-variables:
-  DJANGO_STATIC_ROOT: "staticfiles"
-plugins:
-  - rails/python
-services:
-  - name: web
-    command: python manage.py collectstatic --noinput && python manage.py migrate && gunicorn your_django_project.wsgi --workers 1 --bind 0.0.0.0:$PORT
